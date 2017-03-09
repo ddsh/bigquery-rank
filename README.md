@@ -7,8 +7,25 @@ a specified field.
     2. Download the files in /tmp  
     3. Uncompress files - sort - rank  
     4. Upload ranked file to bigquery  
-    
-#### Example:  
+
+#### Arguments
+ project : Google Cloud Platform Project Id  
+ bucket :  Storage Bucket Id  
+ dataset :  BigQuery Dataset Id  
+ src_table : BigQuery Source Table  
+ dst_table : BigQuery Destination Table  
+ field : Field of the source table for sorting  
+ reverse : Reverse Sorting  
+ numerical : Numerical Sorting  
+
+
+#### Usage
+~~~~
+  bigquery_rank.py <project> <bucket> <dataset> <src_table> <dst_table> <field> [--reverse] [--numerical]
+  bigquery_rank.py -h | --help
+~~~~
+
+#### Example
 
 Input table:
 
@@ -25,21 +42,3 @@ Output table:
 | 'Alice'   |             4               |   2  |
 | 'Bob'     |             3               |   3  |
 | 'Charlie' |             5               |   1  |
-
-
-### Arguments
- project : Google Cloud Platform Project Id  
- bucket :  Storage Bucket Id  
- dataset :  BigQuery Dataset Id  
- src_table : BigQuery Source Table  
- dst_table : BigQuery Destination Table  
- field : Field of the source table for sorting  
- reverse : Reverse Sorting  
- numerical : Numerical Sorting  
-
-
-### Usage
-~~~~
-  bigquery_rank.py <project> <bucket> <dataset> <src_table> <dst_table> <field> [--reverse] [--numerical]
-  bigquery_rank.py -h | --help
-~~~~
